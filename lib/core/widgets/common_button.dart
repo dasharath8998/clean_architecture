@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/app_sizes.dart';
 
+import '../constants/app_sizes.dart';
 
 class CommonButton extends StatelessWidget {
   final String label;
@@ -31,22 +31,22 @@ class CommonButton extends StatelessWidget {
         onPressed: (isEnabled && !isLoading) ? onPressed : null,
         child: isLoading
             ? const SizedBox(
-          width: 22,
-          height: 22,
-          child: CircularProgressIndicator(
-            strokeWidth: 2.5,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          ),
-        )
+                width: 22,
+                height: 22,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2.5,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              )
             : icon != null
             ? Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon!,
-            const SizedBox(width: AppSizes.sm),
-            Text(label),
-          ],
-        )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  icon!,
+                  const SizedBox(width: AppSizes.sm),
+                  Text(label),
+                ],
+              )
             : Text(label),
       ),
     );

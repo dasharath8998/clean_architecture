@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'local_storage.dart';
 
+import 'local_storage.dart';
 
 class SharedPreferencesStorage implements LocalStorage {
   final SharedPreferences _prefs;
@@ -26,7 +26,6 @@ class SharedPreferencesStorage implements LocalStorage {
   @override
   Future<bool> clear() => _prefs.clear();
 }
-
 
 class StorageKeys {
   StorageKeys._();

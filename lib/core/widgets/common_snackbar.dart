@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
-
 
 class CommonSnackbar {
   CommonSnackbar._();
 
-  
   static void showError(BuildContext context, String message) {
     _show(
       context,
@@ -16,7 +15,6 @@ class CommonSnackbar {
     );
   }
 
-  
   static void showSuccess(BuildContext context, String message) {
     _show(
       context,
@@ -26,7 +24,6 @@ class CommonSnackbar {
     );
   }
 
-  
   static void showInfo(BuildContext context, String message) {
     _show(
       context,
@@ -37,12 +34,12 @@ class CommonSnackbar {
   }
 
   static void _show(
-      BuildContext context, {
-        required String message,
-        required Color backgroundColor,
-        required IconData icon,
-        Duration duration = const Duration(seconds: 3),
-      }) {
+    BuildContext context, {
+    required String message,
+    required Color backgroundColor,
+    required IconData icon,
+    Duration duration = const Duration(seconds: 3),
+  }) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

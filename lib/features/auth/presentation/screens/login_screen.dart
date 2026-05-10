@@ -12,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -32,9 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _onLoginPressed() {
     if (_formKey.currentState?.validate() ?? false) {
-      context
-          .read<LoginBloc>()
-          .add(LoginSubmitted(_mobileController.text.trim()));
+      context.read<LoginBloc>().add(
+        LoginSubmitted(_mobileController.text.trim()),
+      );
     }
   }
 
@@ -105,16 +104,16 @@ class _LoginScreenState extends State<LoginScreen> {
         const SizedBox(height: AppSizes.lg),
         Text(
           AppStrings.loginTitle,
-          style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            fontWeight: FontWeight.w800,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: AppSizes.sm),
         Text(
           AppStrings.loginSubtitle,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: AppColors.textSecondary,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
         ),
       ],
     );
@@ -149,11 +148,13 @@ class _LoginScreenState extends State<LoginScreen> {
             }
             return null;
           },
-          buildCounter: (context,
-              {required currentLength,
+          buildCounter:
+              (
+                context, {
+                required currentLength,
                 required isFocused,
-                maxLength}) =>
-          null,
+                maxLength,
+              }) => null,
           decoration: InputDecoration(
             hintText: AppStrings.mobileNumberHint,
             prefixIcon: const Icon(Icons.phone_outlined),

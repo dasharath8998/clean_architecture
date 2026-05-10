@@ -13,9 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-
 class OtpScreen extends StatefulWidget {
-  
   final String mobile;
 
   const OtpScreen({super.key, required this.mobile});
@@ -36,9 +34,9 @@ class _OtpScreenState extends State<OtpScreen> {
   void _onVerifyPressed() {
     final otp = _otpController.text.trim();
     if (otp.length == 6) {
-      context
-          .read<OtpBloc>()
-          .add(OtpSubmitted(mobile: widget.mobile, otp: otp));
+      context.read<OtpBloc>().add(
+        OtpSubmitted(mobile: widget.mobile, otp: otp),
+      );
     }
   }
 
@@ -116,16 +114,16 @@ class _OtpScreenState extends State<OtpScreen> {
         const SizedBox(height: AppSizes.lg),
         Text(
           AppStrings.otpTitle,
-          style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            fontWeight: FontWeight.w800,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: AppSizes.sm),
         RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: AppColors.textSecondary,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
             children: [
               const TextSpan(text: '${AppStrings.otpSubtitle} '),
               TextSpan(
@@ -161,11 +159,13 @@ class _OtpScreenState extends State<OtpScreen> {
             context.read<OtpBloc>().add(OtpChanged(value));
           },
           textAlign: TextAlign.center,
-          buildCounter: (context,
-              {required currentLength,
+          buildCounter:
+              (
+                context, {
+                required currentLength,
                 required isFocused,
-                maxLength}) =>
-          null,
+                maxLength,
+              }) => null,
           style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.w700,
@@ -191,8 +191,11 @@ class _OtpScreenState extends State<OtpScreen> {
       ),
       child: Row(
         children: [
-          const Icon(Icons.info_outline_rounded,
-              color: AppColors.info, size: 18),
+          const Icon(
+            Icons.info_outline_rounded,
+            color: AppColors.info,
+            size: 18,
+          ),
           const SizedBox(width: AppSizes.sm),
           Expanded(
             child: Text(

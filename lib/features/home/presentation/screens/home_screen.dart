@@ -8,7 +8,6 @@ import '../bloc/home_bloc.dart';
 import 'home_tab_screen.dart';
 import 'search_tab_screen.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -23,10 +22,7 @@ class HomeScreen extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return Scaffold(
-          body: IndexedStack(
-            index: state.selectedIndex,
-            children: _pages,
-          ),
+          body: IndexedStack(index: state.selectedIndex, children: _pages),
           bottomNavigationBar: _buildBottomNavBar(context, state),
         );
       },

@@ -1,3 +1,10 @@
+import 'package:clean_architecture/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:clean_architecture/features/auth/presentation/bloc/otp/otp_bloc.dart';
+import 'package:clean_architecture/features/auth/presentation/screens/login_screen.dart';
+import 'package:clean_architecture/features/auth/presentation/screens/otp_screen.dart';
+import 'package:clean_architecture/features/home/presentation/bloc/home_bloc.dart';
+import 'package:clean_architecture/features/home/presentation/screens/home_screen.dart';
+import 'package:clean_architecture/features/splash/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -6,22 +13,6 @@ import '../constants/app_routes.dart';
 import '../di/injection_container.dart';
 import '../storage/local_storage.dart';
 import '../storage/shared_preferences_storage.dart';
-
-import 'package:clean_architecture/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:clean_architecture/features/auth/presentation/bloc/otp/otp_bloc.dart';
-import 'package:clean_architecture/features/home/presentation/bloc/home_bloc.dart';
-
-import 'package:clean_architecture/features/splash/presentation/screens/splash_screen.dart';
-import 'package:clean_architecture/features/auth/presentation/screens/login_screen.dart';
-import 'package:clean_architecture/features/auth/presentation/screens/otp_screen.dart';
-import 'package:clean_architecture/features/home/presentation/screens/home_screen.dart';
-
-
-
-
-
-
-
 
 class AppRouter {
   AppRouter._();
@@ -55,8 +46,7 @@ class AppRouter {
         path: AppRoutes.otpPath,
         builder: (context, state) {
           // Read mobile number from query parameters
-          final mobile =
-              state.uri.queryParameters[AppRoutes.mobileParam] ?? '';
+          final mobile = state.uri.queryParameters[AppRoutes.mobileParam] ?? '';
           return BlocProvider(
             create: (_) => sl<OtpBloc>(),
             child: OtpScreen(mobile: mobile),
@@ -108,11 +98,10 @@ class AppRouter {
     ),
   );
 
-  
   static Future<String?> _routeGuard(
-      BuildContext context,
-      GoRouterState state,
-      ) async {
+    BuildContext context,
+    GoRouterState state,
+  ) async {
     // Public routes that do not require authentication
     final publicRoutes = {
       AppRoutes.splashPath,

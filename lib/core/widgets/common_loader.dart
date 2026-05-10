@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 import '../constants/app_strings.dart';
 
-
 class CommonLoader extends StatelessWidget {
   final String message;
 
-  const CommonLoader({
-    super.key,
-    this.message = AppStrings.loading,
-  });
+  const CommonLoader({super.key, this.message = AppStrings.loading});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +23,7 @@ class CommonLoader extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const CircularProgressIndicator(
-                  color: AppColors.primary,
-                ),
+                const CircularProgressIndicator(color: AppColors.primary),
                 const SizedBox(height: AppSizes.md),
                 Text(
                   message,
@@ -46,7 +41,6 @@ class CommonLoader extends StatelessWidget {
   }
 }
 
-
 class InlineLoader extends StatelessWidget {
   final double size;
   final Color color;
@@ -62,10 +56,7 @@ class InlineLoader extends StatelessWidget {
     return SizedBox(
       width: size,
       height: size,
-      child: CircularProgressIndicator(
-        strokeWidth: 2.5,
-        color: color,
-      ),
+      child: CircularProgressIndicator(strokeWidth: 2.5, color: color),
     );
   }
 }

@@ -1,31 +1,27 @@
 import '../constants/api_constants.dart';
 import '../error/exceptions.dart';
 
-
-
 abstract class ApiClient {
   Future<Map<String, dynamic>> post(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        Map<String, String>? headers,
-      });
+    String endpoint, {
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+  });
 
   Future<Map<String, dynamic>> get(
-      String endpoint, {
-        Map<String, String>? queryParams,
-        Map<String, String>? headers,
-      });
+    String endpoint, {
+    Map<String, String>? queryParams,
+    Map<String, String>? headers,
+  });
 }
-
-
 
 class MockApiClient implements ApiClient {
   @override
   Future<Map<String, dynamic>> post(
-      String endpoint, {
-        Map<String, dynamic>? body,
-        Map<String, String>? headers,
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+  }) async {
     // Simulate network latency
     await Future.delayed(ApiConstants.mockDelay);
 
@@ -46,10 +42,10 @@ class MockApiClient implements ApiClient {
 
   @override
   Future<Map<String, dynamic>> get(
-      String endpoint, {
-        Map<String, String>? queryParams,
-        Map<String, String>? headers,
-      }) async {
+    String endpoint, {
+    Map<String, String>? queryParams,
+    Map<String, String>? headers,
+  }) async {
     await Future.delayed(ApiConstants.mockDelay);
 
     switch (endpoint) {
@@ -93,10 +89,7 @@ class MockApiClient implements ApiClient {
       'message': 'OTP verified successfully.',
       'data': {
         'token': 'mock_auth_token_xyz_123',
-        'user': {
-          'name': 'John Doe',
-          'mobile': body?['mobile'] ?? '',
-        },
+        'user': {'name': 'John Doe', 'mobile': body?['mobile'] ?? ''},
       },
     };
   }
@@ -113,9 +106,6 @@ class MockApiClient implements ApiClient {
   }
 
   Map<String, dynamic> _handleLogout() {
-    return {
-      'success': true,
-      'message': 'Logged out successfully.',
-    };
+    return {'success': true, 'message': 'Logged out successfully.'};
   }
 }

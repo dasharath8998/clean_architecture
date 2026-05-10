@@ -10,12 +10,11 @@ import '../../../../core/di/injection_container.dart';
 import '../../../../core/storage/local_storage.dart';
 import '../../../../core/storage/shared_preferences_storage.dart';
 import '../../../../core/utils/responsive_helper.dart';
+import '../../../../core/utils/use_case.dart';
 import '../../../../core/widgets/common_button.dart';
+import '../../../auth/domain/usecases/logout_use_case.dart';
 import '../../../auth/presentation/bloc/login/login_bloc.dart';
 import '../../../auth/presentation/bloc/otp/otp_bloc.dart';
-import '../../../auth/domain/usecases/logout_use_case.dart';
-import '../../../../core/utils/use_case.dart';
-
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -35,9 +34,7 @@ class ProfileScreen extends StatelessWidget {
             child: const Text(AppStrings.cancel),
           ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.error,
-            ),
+            style: ElevatedButton.styleFrom(backgroundColor: AppColors.error),
             onPressed: () => Navigator.pop(context, true),
             child: const Text(AppStrings.confirm),
           ),
@@ -64,9 +61,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.profileTab),
-      ),
+      appBar: AppBar(title: const Text(AppStrings.profileTab)),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(AppSizes.md),
@@ -83,10 +78,7 @@ class ProfileScreen extends StatelessWidget {
                 CommonButton(
                   label: AppStrings.logoutButton,
                   onPressed: () => _logout(context),
-                  icon: const Icon(
-                    Icons.logout_rounded,
-                    color: Colors.white,
-                  ),
+                  icon: const Icon(Icons.logout_rounded, color: Colors.white),
                 ),
                 const SizedBox(height: AppSizes.xl),
               ],
@@ -147,9 +139,9 @@ class ProfileScreen extends StatelessWidget {
       children: [
         Text(
           AppStrings.dummyUserName,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: AppSizes.xs),
         FutureBuilder<String?>(
@@ -158,9 +150,9 @@ class ProfileScreen extends StatelessWidget {
             final mobile = snapshot.data ?? '9876543210';
             return Text(
               '+91 $mobile',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: AppColors.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
             );
           },
         ),
@@ -209,12 +201,12 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildInfoRow(
-      BuildContext context, {
-        required IconData icon,
-        required String label,
-        required String value,
-        Color? valueColor,
-      }) {
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required String value,
+    Color? valueColor,
+  }) {
     return Row(
       children: [
         Container(
@@ -231,10 +223,7 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                label,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              Text(label, style: Theme.of(context).textTheme.bodySmall),
               Text(
                 value,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(

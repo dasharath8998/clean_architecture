@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class CommonTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
@@ -52,8 +51,13 @@ class CommonTextField extends StatelessWidget {
       textInputAction: textInputAction,
       maxLength: maxLength,
       buildCounter: maxLength != null
-          ? (context, {required currentLength, required isFocused, maxLength}) =>
-      null // hide counter
+          ? (
+              context, {
+              required currentLength,
+              required isFocused,
+              maxLength,
+            }) =>
+                null // hide counter
           : null,
       decoration: InputDecoration(
         labelText: label,

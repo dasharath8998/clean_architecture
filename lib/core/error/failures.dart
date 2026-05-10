@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-
 abstract class Failure extends Equatable {
   final String message;
 
@@ -10,37 +9,27 @@ abstract class Failure extends Equatable {
   List<Object> get props => [message];
 }
 
-
 class ServerFailure extends Failure {
   final int? statusCode;
 
-  const ServerFailure({
-    required super.message,
-    this.statusCode,
-  });
+  const ServerFailure({required super.message, this.statusCode});
 
   @override
   List<Object> get props => [message, statusCode ?? 0];
 }
 
-
 class NetworkFailure extends Failure {
   const NetworkFailure({required super.message});
 }
-
 
 class CacheFailure extends Failure {
   const CacheFailure({required super.message});
 }
 
-
 class ValidationFailure extends Failure {
   const ValidationFailure({required super.message});
 }
 
-
 class UnknownFailure extends Failure {
-  const UnknownFailure({
-    super.message = 'An unexpected error occurred.',
-  });
+  const UnknownFailure({super.message = 'An unexpected error occurred.'});
 }

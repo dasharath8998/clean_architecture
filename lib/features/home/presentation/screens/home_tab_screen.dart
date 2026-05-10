@@ -4,16 +4,13 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/constants/app_strings.dart';
 
-
 class HomeTabScreen extends StatelessWidget {
   const HomeTabScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.homeTab),
-      ),
+      appBar: AppBar(title: const Text(AppStrings.homeTab)),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(AppSizes.lg),
@@ -43,9 +40,9 @@ class HomeTabScreen extends StatelessWidget {
               const SizedBox(height: AppSizes.sm),
               Text(
                 'Welcome to the Home tab',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
               ),
             ],
           ),

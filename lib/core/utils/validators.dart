@@ -1,10 +1,8 @@
 import '../constants/app_strings.dart';
 
-
 class Validators {
   Validators._();
 
-  
   static String? validateMobile(String? value) {
     if (value == null || value.trim().isEmpty) {
       return AppStrings.mobileRequired;
@@ -18,7 +16,6 @@ class Validators {
     return null;
   }
 
-  
   static String? validateOtp(String? value) {
     if (value == null || value.trim().isEmpty) {
       return AppStrings.otpRequired;
@@ -29,7 +26,6 @@ class Validators {
     return null;
   }
 
-  
   static bool isMobileValid(String value) {
     return validateMobile(value) == null;
   }
