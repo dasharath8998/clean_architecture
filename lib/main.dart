@@ -1,3 +1,4 @@
+import 'package:clean_architecture/core/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'core/di/injection_container.dart' as di;
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Clean App',
+      title: AppStrings.cleanApp,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       routerConfig: AppRouter.router,

@@ -4,6 +4,9 @@ class AppStrings {
   // App
   static const String appName = 'CleanApp';
 
+  // Main
+  static const String cleanApp = 'Clean App';
+
   // Splash
   static const String splashTagline = 'Clean. Fast. Reliable.';
 

@@ -1,12 +1,13 @@
+import 'package:clean_architecture/core/constants/app_colors.dart';
+import 'package:clean_architecture/core/constants/app_routes.dart';
+import 'package:clean_architecture/core/constants/app_sizes.dart';
+import 'package:clean_architecture/core/constants/app_strings.dart';
+import 'package:clean_architecture/core/constants/font_sizes.dart';
+import 'package:clean_architecture/core/di/injection_container.dart';
+import 'package:clean_architecture/core/storage/local_storage.dart';
+import 'package:clean_architecture/core/storage/shared_preferences_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_routes.dart';
-import '../../../../core/constants/app_strings.dart';
-import '../../../../core/di/injection_container.dart';
-import '../../../../core/storage/local_storage.dart';
-import '../../../../core/storage/shared_preferences_storage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -80,11 +81,11 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 // App icon placeholder
                 Container(
-                  width: 88,
-                  height: 88,
+                  width: AppSizes.size88,
+                  height: AppSizes.size88,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(AppSizes.size28),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.2),
@@ -96,32 +97,32 @@ class _SplashScreenState extends State<SplashScreen>
                   child: const Icon(
                     Icons.bolt_rounded,
                     color: AppColors.primary,
-                    size: 52,
+                    size: AppSizes.size52,
                   ),
                 ),
-                const SizedBox(height: 24),
-                Text(
+                const SizedBox(height: AppSizes.size24),
+                const Text(
                   AppStrings.appName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: FontSizes.font32,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1.5,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSizes.size8),
                 Text(
                   AppStrings.splashTagline,
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.7),
-                    fontSize: 14,
+                    fontSize: FontSizes.font14,
                     letterSpacing: 0.5,
                   ),
                 ),
-                const SizedBox(height: 48),
+                const SizedBox(height: AppSizes.size48),
                 const SizedBox(
-                  width: 28,
-                  height: 28,
+                  width: AppSizes.size28,
+                  height: AppSizes.size28,
                   child: CircularProgressIndicator(
                     strokeWidth: 2.5,
                     color: Colors.white,
