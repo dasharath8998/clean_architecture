@@ -31,6 +31,7 @@ class AppStrings {
   static const String otpSixDigits = 'OTP must be exactly 6 digits';
   static const String otpInvalid = 'Invalid OTP. Please try again.';
   static const String otpSuccess = 'OTP verified successfully!';
+  static const String otpDemoMsg = 'Use 123456 as the OTP for this demo.';
 
   // Home
   static const String homeTab = 'Home';

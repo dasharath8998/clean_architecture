@@ -2,6 +2,7 @@ import 'package:clean_architecture/core/constants/app_colors.dart';
 import 'package:clean_architecture/core/constants/app_routes.dart';
 import 'package:clean_architecture/core/constants/app_sizes.dart';
 import 'package:clean_architecture/core/constants/app_strings.dart';
+import 'package:clean_architecture/core/constants/font_sizes.dart';
 import 'package:clean_architecture/core/extensions/string_extensions.dart';
 import 'package:clean_architecture/core/utils/responsive_helper.dart';
 import 'package:clean_architecture/core/widgets/common_button.dart';
@@ -33,7 +34,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   void _onVerifyPressed() {
     final otp = _otpController.text.trim();
-    if (otp.length == 6) {
+    if (otp.length == AppSizes.length6) {
       context.read<OtpBloc>().add(
         OtpSubmitted(mobile: widget.mobile, otp: otp),
       );
@@ -99,8 +100,8 @@ class _OtpScreenState extends State<OtpScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 56,
-          height: 56,
+          width: AppSizes.size58,
+          height: AppSizes.size58,
           decoration: BoxDecoration(
             color: AppColors.primary.withOpacity(0.1),
             borderRadius: BorderRadius.circular(AppSizes.radiusMd),
@@ -108,7 +109,7 @@ class _OtpScreenState extends State<OtpScreen> {
           child: const Icon(
             Icons.lock_outline_rounded,
             color: AppColors.primary,
-            size: 30,
+            size: AppSizes.size32,
           ),
         ),
         const SizedBox(height: AppSizes.lg),
@@ -153,7 +154,7 @@ class _OtpScreenState extends State<OtpScreen> {
         TextFormField(
           controller: _otpController,
           keyboardType: TextInputType.number,
-          maxLength: 6,
+          maxLength: AppSizes.length6,
           inputFormatters: [FilteringTextInputFormatter.digitsOnly],
           onChanged: (value) {
             context.read<OtpBloc>().add(OtpChanged(value));
@@ -167,13 +168,16 @@ class _OtpScreenState extends State<OtpScreen> {
                 maxLength,
               }) => null,
           style: const TextStyle(
-            fontSize: 22,
+            fontSize: FontSizes.font22,
             fontWeight: FontWeight.w700,
-            letterSpacing: 8,
+            letterSpacing: AppSizes.size8,
           ),
           decoration: const InputDecoration(
             hintText: '••••••',
-            hintStyle: TextStyle(letterSpacing: 8, fontSize: 22),
+            hintStyle: TextStyle(
+              letterSpacing: AppSizes.size8,
+              fontSize: FontSizes.font22,
+            ),
             prefixIcon: Icon(Icons.lock_outline_rounded),
           ),
         ),
@@ -194,12 +198,12 @@ class _OtpScreenState extends State<OtpScreen> {
           const Icon(
             Icons.info_outline_rounded,
             color: AppColors.info,
-            size: 18,
+            size: AppSizes.size18,
           ),
           const SizedBox(width: AppSizes.sm),
           Expanded(
             child: Text(
-              'Use 123456 as the OTP for this demo.',
+              AppStrings.otpDemoMsg,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppColors.info,
                 fontWeight: FontWeight.w500,
@@ -212,7 +216,7 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   Widget _buildVerifyButton(OtpState state) {
-    final isEnabled = _otpController.text.length == 6;
+    final isEnabled = _otpController.text.length == AppSizes.size18;
     return CommonButton(
       label: AppStrings.verifyButton,
       isEnabled: isEnabled,

@@ -46,10 +46,15 @@ class AppSizes {
   static const double avatarMd = 56.0;
   static const double avatarLg = 80.0;
 
+  static const int length6 = 6;
+  static const int length10 = 10;
   static const double size8 = 8.0;
+  static const double size18 = 18.0;
   static const double size28 = 28.0;
   static const double size24 = 24.0;
+  static const double size32 = 32.0;
   static const double size48 = 48.0;
   static const double size52 = 52.0;
+  static const double size58 = 58.0;
   static const double size88 = 88.0;
 }

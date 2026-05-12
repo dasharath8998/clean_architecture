@@ -93,13 +93,17 @@ class _LoginScreenState extends State<LoginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 56,
-          height: 56,
+          width: AppSizes.size58,
+          height: AppSizes.size58,
           decoration: BoxDecoration(
             color: AppColors.primary,
             borderRadius: BorderRadius.circular(AppSizes.radiusMd),
           ),
-          child: const Icon(Icons.bolt_rounded, color: Colors.white, size: 32),
+          child: const Icon(
+            Icons.bolt_rounded,
+            color: Colors.white,
+            size: AppSizes.size32,
+          ),
         ),
         const SizedBox(height: AppSizes.lg),
         Text(
@@ -131,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
         TextFormField(
           controller: _mobileController,
           keyboardType: TextInputType.phone,
-          maxLength: 10,
+          maxLength: AppSizes.length10,
           inputFormatters: [FilteringTextInputFormatter.digitsOnly],
           onChanged: (value) {
             context.read<LoginBloc>().add(LoginMobileChanged(value));
@@ -143,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
             if (!RegExp(r'^\d+$').hasMatch(value)) {
               return AppStrings.mobileDigitsOnly;
             }
-            if (value.length != 10) {
+            if (value.length != AppSizes.length10) {
               return AppStrings.mobileTenDigits;
             }
             return null;
