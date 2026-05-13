@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             const SizedBox(height: AppSizes.xxl),
                             _buildHeader(),
                             const SizedBox(height: AppSizes.xxxl),
-                            _buildMobileField(state),
+                            _buildMobileField(),
                             const SizedBox(height: AppSizes.xl),
                             _buildLoginButton(state),
                             const SizedBox(height: AppSizes.xl),
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildMobileField(LoginState state) {
+  Widget _buildMobileField() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -159,11 +159,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 required isFocused,
                 maxLength,
               }) => null,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: AppStrings.mobileNumberHint,
-            prefixIcon: const Icon(Icons.phone_outlined),
+            prefixIcon: Icon(Icons.phone_outlined),
             prefixText: '+91  ',
-            prefixStyle: const TextStyle(
+            prefixStyle: TextStyle(
               color: AppColors.textPrimary,
               fontWeight: FontWeight.w500,
             ),

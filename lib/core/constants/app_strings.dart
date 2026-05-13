@@ -55,4 +55,13 @@ class AppStrings {
 
   // Loading
   static const String loading = 'Please wait...';
+
+  // Profile
+  static const String fullName = 'Full Name';
+  static const String mobile = 'Mobile';
+  static const String tempNumber = '91 9876543210';
+  static const String email = 'Email';
+  static const String tempEmail = 'john.doe@example.com';
+  static const String status = 'Status';
+  static const String verified = 'Verified';
 }

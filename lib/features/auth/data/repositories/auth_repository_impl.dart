@@ -6,13 +6,13 @@ import 'package:clean_architecture/features/auth/domain/entities/user_entity.dar
 import 'package:clean_architecture/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  final AuthRemoteDataSource remoteDataSource;
-  final AuthLocalDataSource localDataSource;
-
   const AuthRepositoryImpl({
     required this.remoteDataSource,
     required this.localDataSource,
   });
+
+  final AuthRemoteDataSource remoteDataSource;
+  final AuthLocalDataSource localDataSource;
 
   @override
   Future<void> login(String mobile) async {

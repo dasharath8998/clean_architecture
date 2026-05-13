@@ -8,13 +8,14 @@ part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  final LoginUseCase loginUseCase;
 
   LoginBloc({required this.loginUseCase}) : super(const LoginInitial()) {
     on<LoginMobileChanged>(_onMobileChanged);
     on<LoginSubmitted>(_onLoginSubmitted);
     on<LoginReset>(_onReset);
   }
+
+  final LoginUseCase loginUseCase;
 
   void _onMobileChanged(LoginMobileChanged event, Emitter<LoginState> emit) {
     final isValid = Validators.isMobileValid(event.mobile);

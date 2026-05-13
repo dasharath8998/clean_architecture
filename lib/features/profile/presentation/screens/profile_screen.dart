@@ -1,20 +1,20 @@
+import 'package:clean_architecture/core/constants/app_colors.dart';
+import 'package:clean_architecture/core/constants/app_routes.dart';
+import 'package:clean_architecture/core/constants/app_sizes.dart';
+import 'package:clean_architecture/core/constants/app_strings.dart';
+import 'package:clean_architecture/core/constants/font_sizes.dart';
+import 'package:clean_architecture/core/di/injection_container.dart';
+import 'package:clean_architecture/core/storage/local_storage.dart';
+import 'package:clean_architecture/core/storage/shared_preferences_storage.dart';
+import 'package:clean_architecture/core/utils/responsive_helper.dart';
+import 'package:clean_architecture/core/utils/use_case.dart';
+import 'package:clean_architecture/core/widgets/common_button.dart';
+import 'package:clean_architecture/features/auth/domain/usecases/logout_use_case.dart';
+import 'package:clean_architecture/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:clean_architecture/features/auth/presentation/bloc/otp/otp_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_routes.dart';
-import '../../../../core/constants/app_sizes.dart';
-import '../../../../core/constants/app_strings.dart';
-import '../../../../core/di/injection_container.dart';
-import '../../../../core/storage/local_storage.dart';
-import '../../../../core/storage/shared_preferences_storage.dart';
-import '../../../../core/utils/responsive_helper.dart';
-import '../../../../core/utils/use_case.dart';
-import '../../../../core/widgets/common_button.dart';
-import '../../../auth/domain/usecases/logout_use_case.dart';
-import '../../../auth/presentation/bloc/login/login_bloc.dart';
-import '../../../auth/presentation/bloc/otp/otp_bloc.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -116,19 +116,23 @@ class ProfileScreen extends StatelessWidget {
               'JD',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 28,
+                fontSize: FontSizes.font28,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(AppSizes.length4),
           decoration: const BoxDecoration(
             color: AppColors.success,
             shape: BoxShape.circle,
           ),
-          child: const Icon(Icons.check, color: Colors.white, size: 14),
+          child: const Icon(
+            Icons.check,
+            color: Colors.white,
+            size: AppSizes.size14,
+          ),
         ),
       ],
     );
@@ -169,29 +173,29 @@ class ProfileScreen extends StatelessWidget {
             _buildInfoRow(
               context,
               icon: Icons.person_outline_rounded,
-              label: 'Full Name',
+              label: AppStrings.fullName,
               value: AppStrings.dummyUserName,
             ),
             const Divider(height: AppSizes.xl),
             _buildInfoRow(
               context,
               icon: Icons.phone_outlined,
-              label: 'Mobile',
-              value: '+91 9876543210',
+              label: AppStrings.mobile,
+              value: AppStrings.tempNumber,
             ),
             const Divider(height: AppSizes.xl),
             _buildInfoRow(
               context,
               icon: Icons.email_outlined,
-              label: 'Email',
-              value: 'john.doe@example.com',
+              label: AppStrings.email,
+              value: AppStrings.tempEmail,
             ),
             const Divider(height: AppSizes.xl),
             _buildInfoRow(
               context,
               icon: Icons.verified_outlined,
-              label: 'Status',
-              value: 'Verified',
+              label: AppStrings.status,
+              value: AppStrings.verified,
               valueColor: AppColors.success,
             ),
           ],
@@ -210,13 +214,13 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 40,
-          height: 40,
+          width: AppSizes.size40,
+          height: AppSizes.size40,
           decoration: BoxDecoration(
             color: AppColors.primary.withOpacity(0.08),
             borderRadius: BorderRadius.circular(AppSizes.radiusSm),
           ),
-          child: Icon(icon, color: AppColors.primary, size: 20),
+          child: Icon(icon, color: AppColors.primary, size: AppSizes.size20),
         ),
         const SizedBox(width: AppSizes.md),
         Expanded(
