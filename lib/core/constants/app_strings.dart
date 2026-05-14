@@ -40,6 +40,8 @@ class AppStrings {
   static const String homePageTitle = 'Home Page';
   static const String searchPageTitle = 'Search Page';
   static const String profilePageTitle = 'Profile Page';
+  static const String welcomeHomeTab = 'Welcome to the Home tab';
+  static const String searchAnythingHere = 'Search for anything here';
 
   // Profile
   static const String dummyUserName = 'John Doe';

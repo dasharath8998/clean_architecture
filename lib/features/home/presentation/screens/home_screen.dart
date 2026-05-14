@@ -1,12 +1,12 @@
+import 'package:clean_architecture/core/constants/app_colors.dart';
+import 'package:clean_architecture/core/constants/app_sizes.dart';
+import 'package:clean_architecture/core/constants/app_strings.dart';
+import 'package:clean_architecture/features/home/presentation/bloc/home_bloc.dart';
+import 'package:clean_architecture/features/home/presentation/screens/home_tab_screen.dart';
+import 'package:clean_architecture/features/home/presentation/screens/search_tab_screen.dart' show SearchTabScreen;
+import 'package:clean_architecture/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_strings.dart';
-import '../../../profile/presentation/screens/profile_screen.dart';
-import '../bloc/home_bloc.dart';
-import 'home_tab_screen.dart';
-import 'search_tab_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.08),
-            blurRadius: 16,
+            blurRadius: AppSizes.size16,
             offset: const Offset(0, -4),
           ),
         ],

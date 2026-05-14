@@ -1,8 +1,7 @@
+import 'package:clean_architecture/core/constants/app_colors.dart';
+import 'package:clean_architecture/core/constants/app_sizes.dart';
+import 'package:clean_architecture/core/constants/app_strings.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_sizes.dart';
-import '../../../../core/constants/app_strings.dart';
 
 class HomeTabScreen extends StatelessWidget {
   const HomeTabScreen({super.key});
@@ -18,8 +17,8 @@ class HomeTabScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 80,
-                height: 80,
+                width: AppSizes.size80,
+                height: AppSizes.size80,
                 decoration: BoxDecoration(
                   color: AppColors.primary.withOpacity(0.1),
                   shape: BoxShape.circle,
@@ -27,7 +26,7 @@ class HomeTabScreen extends StatelessWidget {
                 child: const Icon(
                   Icons.home_rounded,
                   color: AppColors.primary,
-                  size: 40,
+                  size: AppSizes.size40,
                 ),
               ),
               const SizedBox(height: AppSizes.lg),
@@ -39,7 +38,7 @@ class HomeTabScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSizes.sm),
               Text(
-                'Welcome to the Home tab',
+                AppStrings.welcomeHomeTab,
                 style: Theme.of(
                   context,
                 ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
