@@ -1,6 +1,5 @@
+import 'package:clean_architecture/core/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
-
-import '../constants/app_sizes.dart';
 
 class ResponsiveHelper {
   ResponsiveHelper._();
@@ -27,14 +26,14 @@ class ResponsiveHelper {
 }
 
 class ResponsiveWrapper extends StatelessWidget {
-  final Widget child;
-  final double maxWidth;
-
   const ResponsiveWrapper({
     super.key,
     required this.child,
     this.maxWidth = AppSizes.maxContentWidth,
   });
+
+  final Widget child;
+  final double maxWidth;
 
   @override
   Widget build(BuildContext context) {

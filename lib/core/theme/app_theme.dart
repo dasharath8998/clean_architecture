@@ -1,7 +1,6 @@
+import 'package:clean_architecture/core/constants/app_colors.dart';
+import 'package:clean_architecture/core/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
-
-import '../constants/app_colors.dart';
-import '../constants/app_sizes.dart';
 
 class AppTheme {
   AppTheme._();

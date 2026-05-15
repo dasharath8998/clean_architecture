@@ -1,6 +1,5 @@
+import 'package:clean_architecture/core/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
-
-import '../constants/app_sizes.dart';
 
 class CommonButton extends StatelessWidget {
   final String label;

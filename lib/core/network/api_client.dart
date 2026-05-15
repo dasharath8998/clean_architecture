@@ -1,5 +1,5 @@
-import '../constants/api_constants.dart';
-import '../error/exceptions.dart';
+import 'package:clean_architecture/core/constants/api_constants.dart';
+import 'package:clean_architecture/core/error/exceptions.dart';
 
 abstract class ApiClient {
   Future<Map<String, dynamic>> post(

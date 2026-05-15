@@ -5,9 +5,9 @@ import '../constants/app_sizes.dart';
 import '../constants/app_strings.dart';
 
 class CommonLoader extends StatelessWidget {
-  final String message;
-
   const CommonLoader({super.key, this.message = AppStrings.loading});
+
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +42,14 @@ class CommonLoader extends StatelessWidget {
 }
 
 class InlineLoader extends StatelessWidget {
-  final double size;
-  final Color color;
-
   const InlineLoader({
     super.key,
     this.size = 24,
     this.color = AppColors.primary,
   });
+
+  final double size;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

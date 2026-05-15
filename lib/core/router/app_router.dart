@@ -1,3 +1,7 @@
+import 'package:clean_architecture/core/constants/app_routes.dart';
+import 'package:clean_architecture/core/di/injection_container.dart';
+import 'package:clean_architecture/core/storage/local_storage.dart';
+import 'package:clean_architecture/core/storage/shared_preferences_storage.dart';
 import 'package:clean_architecture/features/auth/presentation/bloc/login/login_bloc.dart';
 import 'package:clean_architecture/features/auth/presentation/bloc/otp/otp_bloc.dart';
 import 'package:clean_architecture/features/auth/presentation/screens/login_screen.dart';
@@ -9,10 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../constants/app_routes.dart';
-import '../di/injection_container.dart';
-import '../storage/local_storage.dart';
-import '../storage/shared_preferences_storage.dart';
 
 class AppRouter {
   AppRouter._();
@@ -33,7 +33,8 @@ class AppRouter {
       GoRoute(
         name: AppRoutes.login,
         path: AppRoutes.loginPath,
-        builder: (context, state) => BlocProvider(
+        builder: (context, state) =>
+            BlocProvider(
           create: (_) => sl<LoginBloc>(),
           child: const LoginScreen(),
         ),

@@ -3,9 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'local_storage.dart';
 
 class SharedPreferencesStorage implements LocalStorage {
-  final SharedPreferences _prefs;
-
   const SharedPreferencesStorage(this._prefs);
+
+  final SharedPreferences _prefs;
 
   @override
   Future<bool> setBool(String key, bool value) => _prefs.setBool(key, value);

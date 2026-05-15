@@ -1,4 +1,6 @@
 import 'package:clean_architecture/core/network/api_client.dart';
+import 'package:clean_architecture/core/storage/local_storage.dart';
+import 'package:clean_architecture/core/storage/shared_preferences_storage.dart';
 import 'package:clean_architecture/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:clean_architecture/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:clean_architecture/features/auth/data/repositories/auth_repository_impl.dart';
@@ -11,9 +13,6 @@ import 'package:clean_architecture/features/auth/presentation/bloc/otp/otp_bloc.
 import 'package:clean_architecture/features/home/presentation/bloc/home_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../storage/local_storage.dart';
-import '../storage/shared_preferences_storage.dart';
 
 final sl = GetIt.instance;
 
