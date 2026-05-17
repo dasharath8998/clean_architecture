@@ -1,4 +1,3 @@
-
 import 'package:clean_architecture/core/constants/app_strings.dart';
 
 class Validators {
